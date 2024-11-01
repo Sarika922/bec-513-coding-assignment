@@ -135,6 +135,15 @@ A couple of pointers here:
 
 1. You have to use `postscript` terminal because others like `pdf` will fail.
 
+So you would write something like following: 
+```
+set terminal postscript size 6,6 font 'Arial, 15'
+set output "big_matrix.eps"
+```
+
+This `eps` file needst to then get converted into `pdf`. You can use `ps2pdf` command for that. 
+
+
 2. You have to show separation of clusters by horizontal lines. Something like panel A in [this](https://www.science.org/cms/10.1126/sciadv.abm4358/asset/a75483e1-f1ca-4c31-8977-d1938e5efd1c/assets/images/large/sciadv.abm4358-f2.jpg) figure.
 
 HINT: Since you are going to work with time-consuming data. It is better to make a tiny subset of this data and call it `demo`. Work with that, and if all looks good then plot the original file. 
