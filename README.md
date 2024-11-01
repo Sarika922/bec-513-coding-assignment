@@ -10,7 +10,7 @@ CRITICAL: Your code STRICTLY should contain documentation. Because, mostly, you 
 
 3. A general usage statement in the comment. For example, this script takes one input file with pattern of interest and print only lines from the standard input that contains exactly that pattern.
 
-
+**DEADLINE: by Nov. 15, 2024, 5:00 PM.**
 
 ## Q1: Selecting lines from stdin (Python Code + Linux Command)
 
