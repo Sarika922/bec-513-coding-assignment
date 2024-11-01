@@ -47,7 +47,7 @@ ENST00000002165.10,ENST00000367585.1,ENST00000451668.1	ENSG00000001036.13	1869.5
 ENST00000229416.10,ENST00000504353.1,ENST00000504525.1,ENST00000505197.1,ENST00000505294.5,ENST00000509541.5,ENST00000510837.5,ENST00000513939.6,ENST00000514004.5,ENST00000514373.3,ENST00000514933.2,ENST00000515580.1,ENST00000616923.5,ENST00000643939.1,ENST00000650454.1	ENSG00000001084.12	2290.61	2191.61	690.00	7.97	10.94	690.00	0.00	8.53	11.99	6.82069	10.1848	0.0676588	9.58672	14.3148	0.067699
 ```
 
-2<sup>nd</sup> column contains your patterns of interest. But, your final code should not depend on the column position of your pattern in the file. Of course, you are free to use `stdin` and other linux commands to mend it to your way. You have to think how to keep your code general so that when you are working in different scenario, you don't have to make changes in the code.
+2<sup>nd</sup> column contains your patterns of interest. But, your final run (code + linux command) should be in a way that code should not be sensitive to the column position of your pattern in the file. Of course, you are free to use `stdin` and other linux commands to mend it to your way. You have to think how to keep your code general so that when you are working in different scenario, you don't have to make changes in the code.
 
 As instructed above, your thoughts explained on your GitHub repo will earn 0.5 marks and your coding 1.5. 
 
@@ -60,7 +60,43 @@ Your code should read from the standard input. You are likely going to use `ggpl
 
 Your final code should run like the following
 ```
-$ cat data/q2_data.tsv | Rscript <your code.R> "Relative from center [bp]" "Enrichment over Mean" "MNase fragment profile" 
+$ cat data/q2_data.tsv | Rscript <your code.R> "different_clusters.png" "Relative from center [bp]" "Enrichment over Mean" "MNase fragment profile" 
 ```
 
 
+## Q3: Merge multiple files (R + Linux Command)
+
+Often, you will run into merging multiple files by any given column that contains the keys of your interest. Write a general R script which will take a file with the list of file names needs to be merged. The output should be in `stdout`. It can simply be then directed to the desired file as output. 
+
+Your code will take `data/list_q3.tsv` as input, and produce inner join (meaning that the first column values that is common between both of the files).
+
+```
+$ cat data/list_q3.tsv 
+data/q3_first.tsv
+data/q3_second.tsv
+```
+
+Your code should run like the following:
+
+```
+Rscript join_list_of_files.R data/list_q3.tsv  > data/join_output.tsv
+```
+
+The output in the `stdout` should look like the following:
+
+```
+81d92351-c619-4585-9281-de33eaaabba4	TCGA-38-7271-01A	Primary Tumor	13.6971
+2e5071ce-d8cf-46e5-9cc0-91353f0d643c	TCGA-55-7914-01A	Primary Tumor	24.8212
+d3f1b81f-37ce-47b6-b98d-8530076007c7	TCGA-95-7043-01A	Primary Tumor	15.7251
+c568fdc8-6942-44ff-a9d9-3f7a03fdc62a	TCGA-73-4658-01A	Primary Tumor	61.6106
+dd6ec250-8d4d-4129-9664-7451c1760f4b	TCGA-86-8076-01A	Primary Tumor	28.685
+9711a58c-08fc-428f-93a1-3d3db7df213e	TCGA-55-7726-01A	Primary Tumor	135.6884
+3c9960fd-92f3-4bab-9771-933c95edc37f	TCGA-44-6147-01A	Primary Tumor	15.2054
+b080156e-0711-42f5-83c7-a34de25cbba9	TCGA-50-5932-01A	Primary Tumor	14.6362
+c3e2e99a-537a-4263-a835-fef5ed2c3588	TCGA-44-2661-01A	Primary Tumor	18.2345
+cb59cd67-2756-45e1-80c7-67ad6d6823d4	TCGA-86-7954-01A	Primary Tumor	36.8657
+```
+
+NOTE: you would need `tidyverse` library for joining. Please install that. See the function called `reduce`. 
+
+## Q4: 
