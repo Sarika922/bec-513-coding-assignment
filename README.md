@@ -12,7 +12,7 @@ CRITICAL: Your code STRICTLY should contain documentation. Because, mostly, you 
 
 
 
-# Q1: Selecting lines from stdin
+## Q1: Selecting lines from stdin (Python Code + Linux Command)
 
 Often, you would be interested in selecting lines from a file with patterns
 exactly matching your interest. The pattern, however, can either be i) in a
@@ -47,8 +47,20 @@ ENST00000002165.10,ENST00000367585.1,ENST00000451668.1	ENSG00000001036.13	1869.5
 ENST00000229416.10,ENST00000504353.1,ENST00000504525.1,ENST00000505197.1,ENST00000505294.5,ENST00000509541.5,ENST00000510837.5,ENST00000513939.6,ENST00000514004.5,ENST00000514373.3,ENST00000514933.2,ENST00000515580.1,ENST00000616923.5,ENST00000643939.1,ENST00000650454.1	ENSG00000001084.12	2290.61	2191.61	690.00	7.97	10.94	690.00	0.00	8.53	11.99	6.82069	10.1848	0.0676588	9.58672	14.3148	0.067699
 ```
 
-2<sup>nd</sup> contains your patterns of interest. But, your final code should not depend on the column position of your pattern in the file. Of course, you are free to use `stdin` and other linux commands to mend it to your way. You have to think how to keep your code general so that when you are working in different scenario, you don't have to make changes in the code.
+2<sup>nd</sup> column contains your patterns of interest. But, your final code should not depend on the column position of your pattern in the file. Of course, you are free to use `stdin` and other linux commands to mend it to your way. You have to think how to keep your code general so that when you are working in different scenario, you don't have to make changes in the code.
+
+As instructed above, your thoughts explained on your GitHub repo will earn 0.5 marks and your coding 1.5. 
 
 
-# Q2: 
+## Q2: Plotting a group of lines  ( R + Linux Command) 
+
+A line plot requires `X` and `Y` values. But imagine, you have different set of `Y` values marked by categoires. You have to write a general purpose `R` code to plot multiple lines in the sample plot corresponding to different categories. You can find the data to plot here in the `data` directory (`data/q2_data.tsv`). 
+
+Your code should read from the standard input. You are likely going to use `ggplot2`, you will see the advantage of that here.
+
+Your final code should run like the following
+```
+$ cat data/q2_data.tsv | Rscript <your code.R> "Relative from center [bp]" "Enrichment over Mean" "MNase fragment profile" 
+```
+
 
