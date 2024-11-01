@@ -99,4 +99,44 @@ cb59cd67-2756-45e1-80c7-67ad6d6823d4	TCGA-86-7954-01A	Primary Tumor	36.8657
 
 NOTE: you would need `tidyverse` library for joining. Please install that. See the function called `reduce`. 
 
-## Q4: 
+## Q4: Label with quantiles  (Python)
+
+Many times you want to get a sense of data by just plotting them in quantiles.
+The idea of quantiles is that equal number of datapoints will be there in each
+quantile. For example, median is a 50% quantile equally separating data points
+half and half. Your goal is to take a list of numbers from `stdin` and write a
+python code to label them which quantile they belong to. You would take an
+integer as argument from the user to know in how many quantiles you have to
+group. See an example below. 
+
+```
+cat data/first_hundred_numbers.tsv | python group_in_quantiles.py 4 
+75	q3	q3 (50.5, 75.25]
+85	q4	q4 (75.25, 100.0]
+44	q2	q2 (25.75, 50.5]
+63	q3	q3 (50.5, 75.25]
+27	q2	q2 (25.75, 50.5]
+83	q4	q4 (75.25, 100.0]
+90	q4	q4 (75.25, 100.0]
+67	q3	q3 (50.5, 75.25]
+77	q4	q4 (75.25, 100.0]
+69	q3	q3 (50.5, 75.25]
+```
+
+The last column is the interval that defines those quantiles.
+
+HINT: You can use `qcut` function from `pandas` library. 
+
+## Q5: Plotting big matrix (Linux + Gnuplot)
+
+Imagine you have to plot `100,000 x 2000` matrix data as heatmap. R and Python program sweat like crazy when encountered with such scale of data. Gnuplot wins here. Your goal is to plot this matrix as heatmap. You have access to `big_data.tsv.gz`. So, please plot that using Gnuplot. 
+
+A couple of pointers here: 
+
+1. You have to use `postscript` terminal because others like `pdf` will fail.
+
+2. You have to show separation of clusters by horizontal lines. Something like panel A in [this](https://www.science.org/cms/10.1126/sciadv.abm4358/asset/a75483e1-f1ca-4c31-8977-d1938e5efd1c/assets/images/large/sciadv.abm4358-f2.jpg) figure.
+
+HINT: Since you are going to work with time-consuming data. It is better to make a tiny subset of this data and call it `demo`. Work with that, and if all looks good then plot the original file. 
+
+
