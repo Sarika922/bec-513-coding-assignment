@@ -1,3 +1,17 @@
+# Coding assignments as a replacement for quiz
+
+There are a total of five questions carrying two marks each. It involves thinking and coding parts. Complete marks will be awarded only when i)  you explain your approach (0.5) and ii) you have a working code uploaded on Github with usage manual (1.5). 
+
+CRITICAL: Your code STRICTLY should contain documentation. Because, mostly, you will be reading from `stdin`, you must tell what is the format on which this code will work. Particularly, it should include:
+
+1. Sample lines from `stdin` as comments. 
+
+2. It should also contain the command with which you addressed the above point (`1`). 
+
+3. A general usage statement in the comment. For example, this script takes one input file with pattern of interest and print only lines from the standard input that contains exactly that pattern.
+
+
+
 # Q1: Selecting lines from stdin
 
 Often, you would be interested in selecting lines from a file with patterns
@@ -33,4 +47,8 @@ ENST00000002165.10,ENST00000367585.1,ENST00000451668.1	ENSG00000001036.13	1869.5
 ENST00000229416.10,ENST00000504353.1,ENST00000504525.1,ENST00000505197.1,ENST00000505294.5,ENST00000509541.5,ENST00000510837.5,ENST00000513939.6,ENST00000514004.5,ENST00000514373.3,ENST00000514933.2,ENST00000515580.1,ENST00000616923.5,ENST00000643939.1,ENST00000650454.1	ENSG00000001084.12	2290.61	2191.61	690.00	7.97	10.94	690.00	0.00	8.53	11.99	6.82069	10.1848	0.0676588	9.58672	14.3148	0.067699
 ```
 
+2<sup>nd</sup> contains your patterns of interest. But, your final code should not depend on the column position of your pattern in the file. Of course, you are free to use `stdin` and other linux commands to mend it to your way. You have to think how to keep your code general so that when you are working in different scenario, you don't have to make changes in the code.
+
+
 # Q2: 
+
